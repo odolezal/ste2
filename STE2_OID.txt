@@ -1,0 +1,33 @@
+STE2 SNMP OID description
+-------------------------------------------------------------------------
+
+System Values:
+----------------------------------------------------
+.1.3.6.1.2.1.1.1.0             System Description   (string)
+.1.3.6.1.2.1.1.2.0             System ObjectID      (objid)
+.1.3.6.1.2.1.1.3.0             System UpTime        (timeticks)
+.1.3.6.1.2.1.1.4.0             System Contact       (string)
+.1.3.6.1.2.1.1.5.0             System Name          (string)
+.1.3.6.1.2.1.1.6.0             System Location      (string)
+.1.3.6.1.2.1.1.7.0             System Services      (integer)
+.1.3.6.1.4.1.21796.4.9.70.1.0  System MAC address   (string)
+
+Input Dry Contacts
+----------------------------------------------------
+.1.3.6.1.4.1.21796.4.9.1.1.1.n Input Index          (integer,  NUM  (1..x))
+.1.3.6.1.4.1.21796.4.9.1.1.2.n Input Value          (integer,  0=Open, 1=Close)
+.1.3.6.1.4.1.21796.4.9.1.1.3.n Input Name           (string,   SIZE (0..16))
+.1.3.6.1.4.1.21796.4.9.1.1.4.n Input Alarm State    (integer,  0=Normal, 1=Alarm)
+
+Sensors Values, (n = 1..x)
+----------------------------------------------------
+.1.3.6.1.4.1.21796.4.9.3.1.1.n Sensor Index         (integer,  NUM  (1..x))
+.1.3.6.1.4.1.21796.4.9.3.1.2.n Sensor Name          (string,   SIZE (0..16))
+.1.3.6.1.4.1.21796.4.9.3.1.3.n Sensor State         (integer,  0=Invalid, 1=Normal, 2=OutOfRangeLo, 3=OutOfRangeHi, 4=AlarmLo, 5=AlarmHi)
+.1.3.6.1.4.1.21796.4.9.3.1.4.n Sensor String Value  (string,   SIZE (0..10))
+.1.3.6.1.4.1.21796.4.9.3.1.5.n Sensor Value         (integer,  current value *10)
+.1.3.6.1.4.1.21796.4.9.3.1.6.n Sensor SN            (string,   SIZE (0..16))
+.1.3.6.1.4.1.21796.4.9.3.1.7.n Sensor Unit          (integer,  0=unknown, 1=°C, 2=°F, 3=°K, 4=%)
+.1.3.6.1.4.1.21796.4.9.3.1.8.n Sensor ID            (integer,  NUM	(0..x))
+
+For more details, analyze MIB file or check detailed device’s manual..
