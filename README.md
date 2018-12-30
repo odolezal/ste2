@@ -6,4 +6,4 @@ Teploměr a vlhkoměr STE2 od společnosti HW group
 
 ## Integrace se serverem TMEP.cz
 * Skript: [ste2_tmep.sh](ste2_tmep.sh)
-* Nutná registrace na portálu [tmep.cz](https://tmep.cz/) a **nastavení vlastní subdomény a GUID**.
+* **Ve skriptu je nutné upravit IP adresu zařízení STE2 a subdoménu a GUID podle nastavení z [tmep.cz](https://tmep.cz/)**.
