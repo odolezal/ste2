@@ -5,4 +5,5 @@ Teploměr a vlhkoměr STE2 od společnosti HW group
 * Data sheet: https://www.hw-group.com/files/download/man/version/ste2-man_1-0-0_cs.pdf
 
 ## Integrace se serverem TMEP.cz
-* Skript: [ste2_stmep.sh](ste2_stmep.sh)
+* Skript: [ste2_tmep.sh](ste2_tmep.sh)
+* Nutná registrace na portálu [tmep.cz](https://tmep.cz/) a **nastavení vlastní subdomény a GUID**.
