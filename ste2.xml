@@ -1,0 +1,237 @@
+<?xml version="1.0" ?>
+<?xml-stylesheet type="text/xsl" href="home.xsl"?>
+<set:Root xmlns:set="http://www.etech.cz/XMLSchema/poseidon/values.xsd">
+<Menu>
+<Entry>
+<Name>Home</Name>
+<Url>home.xml</Url>
+<Selected>1</Selected>
+</Entry>
+<Entry>
+<Name>General Setup</Name>
+<Url>general_setup.xml</Url>
+</Entry>
+<Entry>
+<Name>WiFi</Name>
+<Url>wifi.xml</Url>
+</Entry>
+<Entry>
+<Name>Sensors</Name>
+<Url>sensor.xml</Url>
+</Entry>
+<Entry>
+<Name>Digital Inputs</Name>
+<Url>input.xml</Url>
+</Entry>
+<Entry>
+<Name>Email</Name>
+<Url>email.xml</Url>
+</Entry>
+<Entry>
+<Name>SMS</Name>
+<Url>sms.xml</Url>
+</Entry>
+<Entry>
+<Name>SNMP</Name>
+<Url>snmp.xml</Url>
+</Entry>
+<Entry>
+<Name>Time</Name>
+<Url>sntp.xml</Url>
+</Entry>
+<Entry>
+<Name>Portal</Name>
+<Url>portal.xml</Url>
+</Entry>
+<Entry>
+<Name>System</Name>
+<Url>system.xml</Url>
+</Entry>
+</Menu>
+<Agent>
+<XmlVer>2.00</XmlVer>
+<Version>1.2.1</Version>
+<Build>3582</Build>
+<BuildTime>Dec 12 2018, 09:08:16</BuildTime>
+<UpTime>134</UpTime>
+<Model>78</Model>
+<ProductName>STE2</ProductName>
+<SerialNumber>6006512771</SerialNumber>
+<EthMAC>00:0A:59:04:7D:AE</EthMAC>
+<WifiApMac>00:0A:59:04:7D:AF</WifiApMac>
+<WifiStaMac>00:0A:59:04:7D:B1</WifiStaMac>
+</Agent>
+<Cmd></Cmd>
+<System>
+<upgrade_server>http://new.hwg.cz/download/fw/version/ste2.js</upgrade_server>
+<dbglog_enable>0</dbglog_enable>
+</System>
+<dhcp>1</dhcp>
+<sys_unit>1</sys_unit>
+<devicename>STE2</devicename>
+<hostname>STE2</hostname>
+<ip_address>10.0.0.15</ip_address>
+<ip_mask>255.255.255.0</ip_mask>
+<ip_gateway>10.0.0.1</ip_gateway>
+<dns1>10.0.0.1</dns1>
+<dns2>8.8.8.8</dns2>
+<porthttp>80</porthttp>
+<username></username>
+<password></password>
+<www_info_text>STE2: For more information try &lt;a href=&quot;http://www.HW-group.com&quot; target=&quot;_blank&quot;&gt;www.HW-group.com&lt;/a&gt;</www_info_text>
+<rest_period>0</rest_period>
+<demomode>1</demomode>
+<DemoPass></DemoPass>
+<DemoRePass></DemoRePass>
+<Snmp>
+<sys_name>TempBadi</sys_name>
+<sys_contact>STE2: For more information try http://www.HW-group.com</sys_contact>
+<sys_location></sys_location>
+<snmp_port>161</snmp_port>
+<snmp_access id="1"><comm>public</comm>
+<enable>1</enable>
+<read>1</read>
+<write>0</write>
+</snmp_access><snmp_access id="2"><comm>private</comm>
+<enable>1</enable>
+<read>1</read>
+<write>1</write>
+</snmp_access></Snmp>
+<Smtp>
+<smtp_server>some.smtp.server</smtp_server>
+<smtp_source_addr>pkotisa@hwg.cz</smtp_source_addr>
+<smtp_dest_addr>recipient@domain.com</smtp_dest_addr>
+<smtp_copy_addr></smtp_copy_addr>
+<smtp_port>25</smtp_port>
+<smtp_subject>subject</smtp_subject>
+<smtp_username></smtp_username>
+<smtp_password></smtp_password>
+<smtp_ssl>0</smtp_ssl>
+<smtp_auth>0</smtp_auth>
+<smtp_importance>0</smtp_importance>
+</Smtp>
+<sms>
+<enable>1</enable>
+<address>94.152.131.145</address>
+<port>80</port>
+<sms_username>demo</sms_username>
+<sms_password>1 2tfwjg==</sms_password>
+<ring>1</ring>
+<recp1>+421902945485</recp1>
+<recp2></recp2>
+</sms>
+<Sntp>
+<sntp_period>1</sntp_period>
+<sntp_timezone>1</sntp_timezone>
+<sntp_timezone_min>0</sntp_timezone_min>
+<sntp_summertime>1</sntp_summertime>
+<sntp_server>europe.pool.ntp.org</sntp_server>
+<sntp_dst_zone>0</sntp_dst_zone>
+<Time>09:28:50</Time>
+<Date>04.08.2019</Date>
+</Sntp>
+<sensor id="2594"><Email>0</Email>
+<SenId>26220a570520086c</SenId>
+<SenName>Umidade Brasil</SenName>
+<SafeRangeLow>30.0</SafeRangeLow>
+<SafeRangeHi>80.0</SafeRangeHi>
+<Hyst>10.0</Hyst>
+<Unit>4</Unit>
+<Exp>0</Exp>
+<ap_delta>5.0</ap_delta>
+<SMS>0</SMS>
+</sensor><sensor id="3594"><Email>1</Email>
+<SenId>280a0e570520081b</SenId>
+<SenName>Temp Bolsonaro</SenName>
+<SafeRangeLow>20.0</SafeRangeLow>
+<SafeRangeHi>28.0</SafeRangeHi>
+<Hyst>1.0</Hyst>
+<Unit>1</Unit>
+<Exp>0</Exp>
+<ap_delta>5.0</ap_delta>
+<SMS>0</SMS>
+</sensor><input id="1"><name>ITTI Supply Porta</name>
+<Email>0</Email>
+<cfg_alarm>1</cfg_alarm>
+<state0_name>Open</state0_name>
+<state1_name>Closed</state1_name>
+<ap_delta>0</ap_delta>
+<SMS>0</SMS>
+</input><input id="2"><name>ITTI Supply Fumaca</name>
+<Email>0</Email>
+<cfg_alarm>2</cfg_alarm>
+<state0_name>Open</state0_name>
+<state1_name>Closed</state1_name>
+<ap_delta>0</ap_delta>
+<SMS>0</SMS>
+</input><Wifi>
+<wifi_enable>1</wifi_enable>
+<wifi_ssid></wifi_ssid>
+<wifi_password></wifi_password>
+<wifi_bssid></wifi_bssid>
+<wifi_serial_tunel>0</wifi_serial_tunel>
+<wifi_mode>0</wifi_mode>
+<wifi_baud>1843200</wifi_baud>
+<console_baud>115200</console_baud>
+<wifi_debug_mux>0</wifi_debug_mux>
+<upgrade_enable>1</upgrade_enable>
+<wifi_dhcp>1</wifi_dhcp>
+<wifi_ip_address>192.168.1.91</wifi_ip_address>
+<wifi_ip_mask>255.255.255.0</wifi_ip_mask>
+<wifi_ip_gateway>192.168.1.1</wifi_ip_gateway>
+<wifi_dns1>192.168.1.1</wifi_dns1>
+<wifi_dns2>0.0.0.0</wifi_dns2>
+</Wifi>
+<Portal>
+<PushEnable>1</PushEnable>
+<ServerAddress>http://sensdesk.com/portal.php</ServerAddress>
+<PortalPort>80</PortalPort>
+<portal_user>1 2tfwjg==</portal_user>
+<portal_pass>1 2tfwjg==</portal_pass>
+<PushPeriod>900</PushPeriod>
+<LogPeriod>300</LogPeriod>
+<APLimit>10</APLimit>
+<AutoPush>0</AutoPush>
+</Portal>
+<Calibration><Enable>1</Enable><Entry id="1">
+<SenId></SenId>
+<Offset>0.0246</Offset>
+</Entry>
+<Entry id="2">
+<SenId></SenId>
+<Offset>0.0000</Offset>
+</Entry>
+<Entry id="3">
+<SenId></SenId>
+<Offset>0.0000</Offset>
+</Entry>
+<Entry id="4">
+<SenId></SenId>
+<Offset>0.0000</Offset>
+</Entry>
+<Entry id="5">
+<SenId></SenId>
+<Offset>0.0000</Offset>
+</Entry>
+<Entry id="6">
+<SenId></SenId>
+<Offset>0.0000</Offset>
+</Entry>
+<Entry id="7">
+<SenId></SenId>
+<Offset>0.0000</Offset>
+</Entry>
+<Entry id="8">
+<SenId></SenId>
+<Offset>0.0000</Offset>
+</Entry>
+<Entry id="9">
+<SenId></SenId>
+<Offset>0.0000</Offset>
+</Entry>
+<Entry id="10">
+<SenId></SenId>
+<Offset>0.0000</Offset>
+</Entry>
+</Calibration>
+</set:Root>
