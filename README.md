@@ -6,10 +6,6 @@ Teploměr a vlhkoměr STE2 od společnosti HW group
 * Portál pro monitoring (odesílání hodnot přímo ze zařízení, tzv. "HWg-Push" funkce): [SensDesk](https://sensdesk.com)
 * Popis SNMP OID: [STE2_OID.txt](STE2_OID.txt)
 
-## Integrace se serverem TMEP.cz
-* Skript: [ste2_tmep.sh](ste2_tmep.sh)
-* **Ve skriptu je nutné upravit IP adresu zařízení STE2 a subdoménu a GUID podle nastavení z [tmep.cz](https://tmep.cz/)**.
-
 ## Bezpečnostní upozornění
 Platí pro výchozí nastavení (Firmware: STE2 ver. 1.2.1 - 12.12.2018):
 
@@ -20,3 +16,6 @@ Platí pro výchozí nastavení (Firmware: STE2 ver. 1.2.1 - 12.12.2018):
 * Protokol SNMP (udp/161) je dostupný pouze ve verzi 2, tzn. bez možnosti pokročilejší autentizace a šifrování přenosu dat.
 * Některé informace o systému a měřené proměné lze vyčítat bez autentizace. Například soubor ```values.xml``` (v kořenu webového serveru).
 
+## Integrace se serverem TMEP.cz
+* Skript: [ste2_tmep.sh](ste2_tmep.sh)
+* **Ve skriptu je nutné upravit IP adresu zařízení STE2 a subdoménu a GUID podle nastavení z [tmep.cz](https://tmep.cz/)**.
