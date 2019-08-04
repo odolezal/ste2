@@ -18,5 +18,5 @@ Platí pro výchozí nastavení (Firmware: STE2 ver. 1.2.1 - 12.12.2018):
 * Přístup do konfigurace přes webové rozhraní neumožňuje zabezpečný (šifrovaný) přenos tzn. možnost protokolu HTTPS chybí.
 * Protokol SNMP (udp/161) má přednastavený široce známý "Community string" ```public``` (pouze čtení hodnot) a ```private``` (čtení a zápis hodnot). Oba "stringy" jsou povoleny.
 * Protokol SNMP (udp/161) je dostupný pouze ve verzi 2, tzn. bez možnosti pokročilejší autentizace a šifrování přenosu dat.
-* Některé informace o systému a měřené proměné lze vyčítat bez auntetizace. Například soubor ```values.xml``` (v kořenu webového serveru).
+* Některé informace o systému a měřené proměné lze vyčítat bez autentizace. Například soubor ```values.xml``` (v kořenu webového serveru).
 
