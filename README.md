@@ -9,7 +9,7 @@ Teploměr a vlhkoměr STE2 od společnosti HW group
 ## Bezpečnostní upozornění
 Platí pro výchozí nastavení (Firmware: STE2 ver. 1.2.1 - 12.12.2018):
 
-* **KRITICKÉ:** Spuštěný příkaz ```curl``` na kořen webového serveru (např. ```curl http://10.0.0.30/```)  vrátí XML dokument s kompletním nastavením zařízení, včetně citlivých proměných jako je ```<username>```, ```<password>```, ```<wifi_password>```, ```<smtp_username>```, ```<smtp_password>```, ```<sms_username>```, ```<sms_password>``` a další, které jsou za běžných okolností viditělné pouze po přihlášení. Ukázka XML výstupu na oficiálním online demu: [ste2.xml](ste2.xml)
+* **KRITICKÉ:** Spuštěný příkaz ```curl``` na kořen webového serveru (např. ```curl http://10.0.0.30/```)  vrátí XML dokument s kompletním nastavením zařízení, včetně citlivých zakódovaných proměných jako je ```<username>```, ```<password>```, ```<wifi_password>```, ```<smtp_username>```, ```<smtp_password>```, ```<sms_username>```, ```<sms_password>``` a další, které jsou za běžných okolností viditělné pouze po přihlášení. Ukázka XML výstupu na oficiálním online demu: [ste2.xml](ste2.xml)
 * Přístup do konfigurace přes webové rozhraní (HTTP, tcp/80) není chráněn žádným jménem ani heslem.
 * Přístup do konfigurace přes webové rozhraní neumožňuje zabezpečný (šifrovaný) přenos tzn. možnost protokolu HTTPS chybí.
 * Protokol SNMP (udp/161) má přednastavený široce známý "Community string" ```public``` (pouze čtení hodnot) a ```private``` (čtení a zápis hodnot). Oba "stringy" jsou povoleny.
