@@ -21,3 +21,23 @@ Firmware: STE2 ver. **1.2.2** - 02.08.2019 (a pravděpodobně všechny starší 
 ## Integrace se serverem TMEP.cz
 * Skript: [ste2_tmep.sh](ste2_tmep.sh)
 * **Ve skriptu je nutné upravit IP adresu zařízení STE2 a subdoménu a GUID podle nastavení z [tmep.cz](https://tmep.cz/)**.
+
+## SensDesk.com values.xml Parser
+* Skript: [sensdesk_values-xml_parser.sh](sensdesk_values-xml_parser.sh)
+
+### Proč tento skript?
+Samotné zařízení STE2 neumožňuje definovat vlastní posílaní hodnot z čidel pomocí standardního HTTP GET požadavku. Jediný způsob, jak stahovat hodnoty bez přímého přístupu (např. přes SNMP nebo HTTP v lokální síti) je nastavit zařízení, aby odesílalo hodnoty na portál SensDesk.com ty následně dále zpracovávat, což dělá právě skript ```sensdesk_values-xml_parser.sh```
+
+[SensDesk.com](https://www.sensdesk.com) je portál pro IoT zařízení od společnosti [HW Group](https://www.hw-group.com/), který umožňuje sledovat měřené veličiny, monitorovat připojené zařízení a zasílat upozornění.
+
+Součástí portálu je i jednoduché API, které umožňuje na specifické URL pracovat s XML výstupem. V zásadadě, každé zařízení má na portálu dostupné rozhraní přes soubor ```values.xml``` ze kterého lze vyčíst mnoho informací, předně pak např. honodtu teploty nebo vlhkosti.
+
+### Jak na to?
+* Nakonfigurujte zařízení aby odesílalo hodnoty na portál Sendesk. Obecný rozcestník s postupem zde: https://sensdesk.com/connect-to-the-sensdeskcom, popř. hledejte přímo v uživatelské příručce.
+* Na portálu SensDesk.com, v záložce [Teams](https://sensdesk.com/sensdesk/team), najdete hodnotu přístupového klíče, tzv. ```values.xml key```, viz nápověda: https://www.hw-group.com/cs/podpora/zmeny-prace-se-setupxml-v-portale-sensdesk
+* Hodnotou ```values.xml key``` nahraďte proměnou ```KEY``` [ve skriptu](https://github.com/odolezal/ste2/blob/master/sensdesk_values-xml_parser.sh#L27).
+* Otevřete URL s XML výstupem. Tvar je ```http://sensdesk.com/sensdesk/values.xml?values_xml_key=KEY```
+* V surovém XML najděte požadovaná čidla a jejich identifikátor, např ```<Sensor sens_id="230008">```. Číselnou hodnotou (zde např. ```230008``` nahraďte proměné ```XYZ``` [u řádků](https://github.com/odolezal/ste2/blob/master/sensdesk_values-xml_parser.sh#L27) pro parsování teploty a vlhkosti.
+
+### Doplňující poznámky
+* Ve skriptu jsou i dva debug příkazy, které zakomentujte, pokud je nepotřebujete.
