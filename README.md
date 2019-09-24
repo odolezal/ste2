@@ -25,6 +25,8 @@ Firmware: STE2 ver. **1.2.2** - 02.08.2019 (a pravděpodobně všechny starší 
 ## SensDesk.com values.xml Parser
 * Skript: [sensdesk_values-xml_parser.sh](sensdesk_values-xml_parser.sh)
 
+**Závislosti:** nástroj ```xmllint``` z balíčku ```libxml2-utils```.
+
 ### Proč tento skript?
 Samotné zařízení STE2 neumožňuje definovat vlastní posílaní hodnot z čidel pomocí standardního HTTP GET požadavku. Jediný způsob, jak stahovat hodnoty bez přímého přístupu (např. přes SNMP nebo HTTP v lokální síti) je nastavit zařízení, aby odesílalo hodnoty na portál a SensDesk.com ty následně dále zpracovávat, což dělá právě skript ```sensdesk_values-xml_parser.sh```
 
