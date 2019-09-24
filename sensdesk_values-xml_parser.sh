@@ -24,7 +24,7 @@ server_status=$(curl -s -I http://sensdesk.com | grep "HTTP")
 echo "Odpoved serveru:" "$server_status"
 
 #Parsovani teploty
-temp_final=$(curl -s http://sensdesk.com/sensdesk/values.xml?values_xml_key=KEY -o values.xml | xmllint --xpath "string(//Root/Devices/Device/Groups/Group/Sensors/Sensor[@sens_id="XYZ"]/Value)" /mnt/usb/backup/values.xml | sed 's/.$/.&/')
+temp_final=$(curl -s http://sensdesk.com/sensdesk/values.xml?values_xml_key=KEY -o values.xml | xmllint --xpath "string(//Root/Devices/Device/Groups/Group/Sensors/Sensor[@sens_id="XYZ"]/Value)" values.xml | sed 's/.$/.&/')
 echo "Teplota:" "$temp_final" "°C"
 
 #Parsovani vlhkosti
