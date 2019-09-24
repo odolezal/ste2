@@ -1,4 +1,4 @@
-### SenseDesk.com values.xml Parser
+### SensDesk.com values.xml Parser
 #Zdroj: https://github.com/odolezal
 #Kontakt: www.odolezal.cz
 ###################################
@@ -13,7 +13,7 @@
 
 #!/bin/bash
 
-echo "SenseDesk.com values.xml Parser"
+echo "SensDesk.com values.xml Parser"
 
 #Casove razitko (pro debug)
 timestamp=$(date +"%H:%M:%S, %d.%m.%Y")
