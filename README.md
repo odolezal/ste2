@@ -26,7 +26,7 @@ Firmware: STE2 ver. **1.2.2** - 02.08.2019 (a pravděpodobně všechny starší 
 * Skript: [sensdesk_values-xml_parser.sh](sensdesk_values-xml_parser.sh)
 
 ### Proč tento skript?
-Samotné zařízení STE2 neumožňuje definovat vlastní posílaní hodnot z čidel pomocí standardního HTTP GET požadavku. Jediný způsob, jak stahovat hodnoty bez přímého přístupu (např. přes SNMP nebo HTTP v lokální síti) je nastavit zařízení, aby odesílalo hodnoty na portál SensDesk.com ty následně dále zpracovávat, což dělá právě skript ```sensdesk_values-xml_parser.sh```
+Samotné zařízení STE2 neumožňuje definovat vlastní posílaní hodnot z čidel pomocí standardního HTTP GET požadavku. Jediný způsob, jak stahovat hodnoty bez přímého přístupu (např. přes SNMP nebo HTTP v lokální síti) je nastavit zařízení, aby odesílalo hodnoty na portál a SensDesk.com ty následně dále zpracovávat, což dělá právě skript ```sensdesk_values-xml_parser.sh```
 
 [SensDesk.com](https://www.sensdesk.com) je portál pro IoT zařízení od společnosti [HW Group](https://www.hw-group.com/), který umožňuje sledovat měřené veličiny, monitorovat připojené zařízení a zasílat upozornění.
 
@@ -41,3 +41,5 @@ Součástí portálu je i jednoduché API, které umožňuje na specifické URL 
 
 ### Doplňující poznámky
 * Ve skriptu jsou i dva debug příkazy, které zakomentujte, pokud je nepotřebujete.
+* Četnost zasílání hodnot na portál lze nastavit v zařízení, na kartě ```Portal```, hodnota ```AutoPush```. Nicméně, na stejné kartě je (zřejmě) globální konstanta ```Push Period``` "časovače" nastavená na 900 sekund, tzn. 15 minut. Nelze tedy s jistotou říci, že hodnoty stahované z portálu SensDesk.com jsou právě tak aktuální, jak jsou v určitém čase odeslány ze zařízení. Nicméně, lze odvodit, že data nejsou starší, než 15 minut (kdy by mělo dojít k pushnutí hodnot na portál v každém případě).
+* Jakékoli komentáře a vylepšení vítány :)
