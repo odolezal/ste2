@@ -32,7 +32,7 @@ Samotné zařízení STE2 neumožňuje definovat vlastní posílaní hodnot z č
 
 [SensDesk.com](https://www.sensdesk.com) je portál pro IoT zařízení od společnosti [HW Group](https://www.hw-group.com/), který umožňuje sledovat měřené veličiny, monitorovat připojené zařízení a zasílat upozornění.
 
-Součástí portálu je i jednoduché API, které umožňuje na specifické URL pracovat s XML výstupem. V zásadadě, každé zařízení má na portálu dostupné rozhraní přes soubor ```values.xml``` ze kterého lze vyčíst mnoho informací, předně pak např. honodtu teploty nebo vlhkosti.
+Součástí portálu je i jednoduché API, které umožňuje na specifické URL pracovat s XML výstupem. V zásadadě, každé zařízení má na portálu dostupné rozhraní přes soubor ```values.xml``` ze kterého lze vyčíst mnoho informací, předně pak např. hodnotu teploty nebo vlhkosti.
 
 ### Jak na to?
 * Nakonfigurujte zařízení aby odesílalo hodnoty na portál Sendesk. Obecný rozcestník s postupem zde: https://sensdesk.com/connect-to-the-sensdeskcom, popř. hledejte přímo v uživatelské příručce.
