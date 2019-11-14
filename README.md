@@ -7,9 +7,8 @@ Teploměr a vlhkoměr STE2 od společnosti HW group
 * Popis SNMP OID: [STE2_OID.txt](STE2_OID.txt)
 
 ## Bezpečnostní upozornění
-Platí pro výchozí nastavení
 
-Firmware: STE2 ver. **1.2.2** - 02.08.2019 (a pravděpodobně všechny starší verze, viz release history: https://www.hw-group.com/cs/product-version/ste2)
+Firmware: STE2 ver. **1.2.2** - 02.08.2019 (a pravděpodobně všechny starší verze, viz release history: https://www.hw-group.com/cs/product-version/ste2). Platí pro výchozí nastavení.
 
 * **KRITICKÉ:** Spuštěný příkaz ```curl``` na kořen webového serveru (např. ```curl http://10.0.0.30/```)  vrátí XML dokument s kompletním nastavením zařízení, včetně citlivých zakódovaných proměných jako je ```<username>```, ```<password>```, ```<wifi_password>```, ```<smtp_username>```, ```<smtp_password>```, ```<sms_username>```, ```<sms_password>``` a další, které jsou za běžných okolností viditělné pouze po přihlášení. Ukázka XML výstupu na oficiálním online demu: [ste2.xml](ste2.xml)
 * Přístup do konfigurace přes webové rozhraní (HTTP, tcp/80) není chráněn žádným jménem ani heslem.
@@ -20,7 +19,15 @@ Firmware: STE2 ver. **1.2.2** - 02.08.2019 (a pravděpodobně všechny starší 
 
 ## Integrace se serverem TMEP.cz
 * Skript: [ste2_tmep.sh](ste2_tmep.sh)
-* **Ve skriptu je nutné upravit IP adresu zařízení STE2 a subdoménu a GUID podle nastavení z [tmep.cz](https://tmep.cz/)**.
+
+_(poslední úpravy k 14.11.2019)_
+
+ **Ve skriptu je nutné upravit IP adresu zařízení STE2 (```ip_address```), subdoménu (```tmep_subdom```) a GUID (```tmep_guid```) podle nastavení z [tmep.cz](https://tmep.cz/)**. Zbytek parametrů předpokládá výchozí nastavení zařízení.
+
+Skript neobsahuje smyčku. Pro opakovaná měření je potřeba do ```crontab```u přidat:
+```
+*/5 * * * * sudo bash /home/pi/ste2_tmep_ng.sh &>/dev/null
+```
 
 ## SensDesk.com values.xml Parser
 * Skript: [sensdesk_values-xml_parser.sh](sensdesk_values-xml_parser.sh)
