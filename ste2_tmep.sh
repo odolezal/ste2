@@ -1,15 +1,39 @@
+#Integrace se serverem TMEP.cz pro IP teplomer a vlhkomer STE2 od HW Group.
+#Git: https://github.com/odolezal/ste2
+#verze: 2.0
+#=====================================
+
 #!/bin/bash
-#Vyctu cistou integer hodnotu teploty a vlhkosti ze STE2 pomoci SNMP
-temp_raw=$(snmpwalk -Oqv -v 2c -c public 10.0.0.30 1.3.6.1.4.1.21796.4.9.3.1.5.2)
-#echo "$temp_raw"
-hum_raw=$(snmpwalk -Oqv -v 2c -c public 10.0.0.30 1.3.6.1.4.1.21796.4.9.3.1.5.1)
-#echo "$hum_raw"
 
-#Pridam desetinou tecku, ktera chybi
-temp_final=$(echo "$temp_raw" | sed 's/.$/.&/')
-echo "Teplota:" "$temp_final"
-hum_final=$(echo "$hum_raw" | sed 's/.$/.&/')
-echo "Vlhkost:" "$hum_final"
+#IP adresa zarizeni
+ip_address="192.168.100.229"
 
-#Poslu na tmep.cz server (-I pro zobrazeni statusu HTTP odpovedi)
-curl -I "http://subdomena.tmep.cz/?GUID=${temp_final}&humV=${hum_final}"
+#SNMP community string (vychozi je public)
+snmp_community="public"
+
+#SNMP OID teploty (prednastavena hodnota pro STE2)
+snmp_oid_temp="1.3.6.1.4.1.21796.4.9.3.1.5.2"
+
+#SNMP OID vlhkosti (prednastavena hodnota pro STE2)
+snmp_oid_hum="1.3.6.1.4.1.21796.4.9.3.1.5.1"
+
+#Subdomena na serveru TMEP.cz
+tmep_subdom="subdomena"
+
+#GUID na serveru TMEP.cz
+tmep_guid="xxxyyyzzz"
+
+#Vyctu cistou integer hodnotu teploty a pridam desetinou tecku
+temp=$(snmpwalk -Oqv -v 2c -c "$snmp_community" "$ip_address" "$snmp_oid_temp" | sed 's/.$/.&/')
+
+#Zobrazeni teploty do konzole (pro debug)
+echo "Teplota:" "$temp" "C"
+
+#Vyctu cistou integer hodnotu vlhkosti a pridam desetinou tecku
+hum=$(snmpwalk -Oqv -v 2c -c "$snmp_community" "$ip_address" "$snmp_oid_hum" | sed 's/.$/.&/')
+
+##Zobrazeni vlhkosti do konzole (pro debug)
+echo "Vlhkost:" "$hum" "%"
+
+#Poslu HTTP pozadavek na server TMEP.cz
+curl "http://${tmep_subdom}.tmep.cz/?${tmep_guid}=${temp}&humV=${hum}"
