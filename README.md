@@ -26,7 +26,7 @@ _(poslední úpravy k 14.11.2019)_
 
 Skript neobsahuje smyčku. Pro opakovaná měření je potřeba do ```crontab```u přidat:
 ```
-*/5 * * * * sudo bash /home/pi/ste2_tmep_ng.sh &>/dev/null
+*/5 * * * * sudo bash /home/pi/ste2_tmep.sh &>/dev/null
 ```
 
 ## SensDesk.com values.xml Parser
