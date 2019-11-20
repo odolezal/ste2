@@ -22,9 +22,11 @@ Firmware: STE2 ver. **1.2.2** - 02.08.2019 (a pravděpodobně všechny starší 
 
 _(poslední úpravy k 14.11.2019)_
 
+**Závislosti:** nástroj ```snmpwalk``` z balíčku ```snmp```.
+
  **Ve skriptu je nutné upravit IP adresu zařízení STE2 (```ip_address```), subdoménu (```tmep_subdom```) a GUID (```tmep_guid```) podle nastavení z [tmep.cz](https://tmep.cz/)**. Zbytek parametrů předpokládá výchozí nastavení zařízení.
 
-Skript neobsahuje smyčku. Pro opakovaná měření je potřeba do ```crontab```u přidat:
+Skript neobsahuje smyčku. Pro opakovaná měření je potřeba do ```crontab``` přidat:
 ```
 */5 * * * * sudo bash /home/pi/ste2_tmep.sh &>/dev/null
 ```
