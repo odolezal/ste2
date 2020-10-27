@@ -8,9 +8,13 @@ Teploměr a vlhkoměr STE2 od společnosti HW group
 
 ## Bezpečnostní upozornění
 
-Firmware: STE2 ver. **1.2.2** - 02.08.2019 (a pravděpodobně všechny starší verze, viz release history: https://www.hw-group.com/cs/product-version/ste2). Platí pro výchozí nastavení.
+Platí pro výchozí nastavení.
 
-* **KRITICKÉ:** Spuštěný příkaz ```curl``` na kořen webového serveru (např. ```curl http://10.0.0.30/```)  vrátí XML dokument s kompletním nastavením zařízení, včetně citlivých zakódovaných proměných jako je ```<username>```, ```<password>```, ```<wifi_password>```, ```<smtp_username>```, ```<smtp_password>```, ```<sms_username>```, ```<sms_password>``` a další, které jsou za běžných okolností viditělné pouze po přihlášení. Ukázka XML výstupu na oficiálním online demu: [ste2.xml](ste2.xml)
+Pro firmware STE2 verze **1.2.2** - 02.08.2019 (a pravděpodobně všechny starší verze, viz release history: https://www.hw-group.com/cs/product-version/ste2). 
+
+* **KRITICKÉ (opraveno ve verzi 1.2.6):** Spuštěný příkaz ```curl``` na kořen webového serveru (např. ```curl http://10.0.0.30/```)  vrátí XML dokument s kompletním nastavením zařízení, včetně citlivých zakódovaných proměných jako je ```<username>```, ```<password>```, ```<wifi_password>```, ```<smtp_username>```, ```<smtp_password>```, ```<sms_username>```, ```<sms_password>``` a další, které jsou za běžných okolností viditělné pouze po přihlášení. Ukázka XML výstupu na oficiálním online demu: [ste2.xml](ste2.xml). 
+
+Pro firmware STE2 verze **1.2.6** - 16.04.2020 (a pravděpodobně všechny starší verze, viz release history: https://www.hw-group.com/cs/product-version/ste2).
 * Přístup do konfigurace přes webové rozhraní (HTTP, tcp/80) není chráněn žádným jménem ani heslem.
 * Přístup do konfigurace přes webové rozhraní neumožňuje zabezpečný (šifrovaný) přenos tzn. možnost protokolu HTTPS chybí.
 * Protokol SNMP (udp/161) má přednastavený široce známý "Community string" ```public``` (pouze čtení hodnot) a ```private``` (čtení a zápis hodnot). Oba "stringy" jsou povoleny.
